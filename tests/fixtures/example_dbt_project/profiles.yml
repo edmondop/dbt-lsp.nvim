@@ -1,0 +1,7 @@
+example:
+  outputs:
+    dev:
+      type: duckdb
+      path: /tmp/dbt_test.duckdb
+      threads: 1
+  target: dev

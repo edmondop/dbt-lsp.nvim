@@ -1,0 +1,31 @@
+---
+name: dbt-lsp
+description: Language Server Protocol implementation for dbt (data build tool)
+homepage: https://github.com/dbt-labs/dbt-fusion
+# Package for dbt Language Server
+licenses:
+  - Proprietary
+languages:
+  - SQL
+  - YAML
+categories:
+  - LSP
+
+source:
+  id: custom
+  run: curl -fsSL https://raw.githubusercontent.com/dbt-labs/dbt-fusion/main/crates/dbt-common/assets/install.sh | sh -s -- --package dbt-lsp --version {{version}} --to {{INSTALL_DIR}}
+
+bin:
+  dbt-lsp: "{{INSTALL_DIR}}/dbt-lsp"
+
+schema:
+  lspconfig:
+    default_config:
+      cmd:
+        - dbt-lsp
+        - --socket
+        - "7658"
+      filetypes:
+        - sql
+        - yaml
+      root_dir: root_pattern("dbt_project.yml")

@@ -1,0 +1,61 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Raw source data
+    tables:
+      - name: customers
+        description: Raw customer data
+        columns:
+          - name: id
+            description: Primary key
+          - name: name
+            description: Customer name
+          - name: email
+            description: Customer email
+          - name: created_at
+            description: Record creation timestamp
+
+      - name: orders
+        description: Raw order data
+        columns:
+          - name: id
+            description: Primary key
+          - name: customer_id
+            description: Foreign key to customers
+          - name: order_date
+            description: Date order was placed
+          - name: total_amount
+            description: Total order amount
+
+models:
+  - name: stg_customers
+    description: Staged customer data
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: Staged order data
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_customers
+    description: Customer dimension with aggregated metrics
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+        description: Total number of orders
+      - name: lifetime_value
+        description: Total customer lifetime value

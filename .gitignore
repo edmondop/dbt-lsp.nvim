@@ -1,0 +1,27 @@
+# Neovim
+doc/tags
+
+# Lua
+*.luac
+*.lua~
+
+# Testing
+/tmp/
+tests/fixtures/example_dbt_project/target/
+tests/fixtures/example_dbt_project/dbt_packages/
+tests/fixtures/example_dbt_project/logs/
+tests/fixtures/example_dbt_project/*.duckdb
+tests/fixtures/example_dbt_project/*.duckdb.wal
+
+# OS
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Editor
+.vscode/
+.idea/
+
+# Dependencies
+/plenary.nvim/

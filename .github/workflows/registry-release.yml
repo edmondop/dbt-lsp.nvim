@@ -1,0 +1,19 @@
+---
+name: Registry Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/**'
+  workflow_dispatch:
+
+jobs:
+  release:
+    name: Build and Release Registry
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: mason-org/actions/registry-release@v1

@@ -1,0 +1,23 @@
+name: 'example_dbt_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'example'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  example_dbt_project:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
