@@ -1,6 +1,6 @@
 ---
 name: dbt-lsp
-description: Language Server Protocol implementation for dbt (data build tool)
+description: Language Server Protocol implementation for dbt (data build tool), based on the LSP provided by dbt-fusion installation script
 homepage: https://github.com/dbt-labs/dbt-fusion
 # Package for dbt Language Server
 licenses:
