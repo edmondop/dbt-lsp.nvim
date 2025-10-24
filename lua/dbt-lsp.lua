@@ -1,7 +1,7 @@
 local M = {}
 
 M.config = {
-  cmd = { "dbt-lsp" },
+  cmd = { "dbt-lsp-proxy" },
   filetypes = { "sql", "yaml" },
   root_dir = nil,
   settings = {},
