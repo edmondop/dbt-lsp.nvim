@@ -18,4 +18,4 @@ source:
       curl -fsSL https://raw.githubusercontent.com/dbt-labs/dbt-fusion/main/crates/dbt-common/assets/install.sh | sh -s -- --package dbt-lsp --to {{INSTALL_DIR}}
 
 bin:
-  dbt-lsp: "{{INSTALL_DIR}}/dbt-lsp"
+  dbt-lsp: dbt-lsp
