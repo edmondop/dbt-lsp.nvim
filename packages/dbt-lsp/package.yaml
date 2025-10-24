@@ -19,15 +19,3 @@ source:
 
 bin:
   dbt-lsp: "{{INSTALL_DIR}}/dbt-lsp"
-
-schema:
-  lspconfig:
-    default_config:
-      cmd:
-        - dbt-lsp
-        - --socket
-        - "7658"
-      filetypes:
-        - sql
-        - yaml
-      root_dir: root_pattern("dbt_project.yml")
